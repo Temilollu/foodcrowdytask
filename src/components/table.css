@@ -1,0 +1,62 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-weight: bold;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  text-transform: capitalize;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+.span-img img {
+  width: 5%;
+  vertical-align: middle;
+}
+.cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+.cta > * {
+  margin: auto 0.5rem;
+}
+.cta button {
+  padding: 0.7rem 1rem;
+  background-color: rgb(3, 182, 107);
+  color: white;
+  border-style: none;
+  cursor: pointer;
+}
+.cta input {
+  height: 35px;
+}
+@media screen and (max-width: 600px) {
+  .cta{
+    flex-wrap: wrap;
+  }
+  .cta > * {
+    margin: 0.5rem;
+  }
+  /* table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+  tr:nth-child(even) {
+    background-color: white;
+  }
+
+  table td:last-child {
+    border-bottom: 0;
+  } */
+}
