@@ -30,7 +30,7 @@ tr:nth-child(even) {
 }
 .cta button {
   padding: 0.7rem 1rem;
-  background-color: rgb(3, 182, 107);
+  /* background-color: rgb(3, 182, 107); */
   color: white;
   border-style: none;
   cursor: pointer;
