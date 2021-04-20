@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import Table from "./components/Table";
+import { COLUMNS } from "./components/columns";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -15,7 +16,10 @@ function App() {
           setData(value.payload);
           setLoading(false);
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          setLoading(false);
+          console.log(err);
+        });
     }
     getData();
   }, []);
@@ -24,7 +28,11 @@ function App() {
 
   return (
     <div className="App">
-      {loading ? "Data loading" : <Table datas={data} />}
+      {loading ? (
+        "Data loading..."
+      ) : (
+        <Table jsonData={data} COLUMNS={COLUMNS} />
+      )}
     </div>
   );
 }

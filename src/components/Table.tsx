@@ -4,18 +4,19 @@ import {
   useTable,
   useSortBy,
   useColumnOrder,
+  Column,
 } from "react-table";
-import { COLUMNS } from "./columns";
+
 import "./table.css";
 type TableProps = {
-  datas: Array<object>;
-  // column : Array<object>
+  jsonData: Array<object>;
+  COLUMNS : Column<object>[]
 };
 
-const PaginationTable = (props: TableProps) => {
-  const { datas } = props;
-  const columns = useMemo(() => COLUMNS, []);
-  const data = useMemo(() => datas, [datas]);
+const Table = (props: TableProps) => {
+  const { jsonData, COLUMNS } = props;
+  const columns = useMemo(() => COLUMNS, [COLUMNS]);
+  const data = useMemo(() => jsonData, [jsonData]);
 
   const {
     getTableBodyProps,
@@ -42,7 +43,6 @@ const PaginationTable = (props: TableProps) => {
     usePagination
   );
 
-  // const { pageIndex } = state
 
   const changeOrder = () => {
     setColumnOrder([
@@ -129,4 +129,4 @@ const PaginationTable = (props: TableProps) => {
   );
 };
 
-export default PaginationTable;
+export default Table;
